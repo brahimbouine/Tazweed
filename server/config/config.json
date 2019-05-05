@@ -1,0 +1,36 @@
+{
+    "development": {
+      "username": "root",
+      "password": "google",
+      "database": "tazweed",
+      "host": "localhost",
+      "dialect": "mysql",
+      "port":3306,
+      "define" : {
+        "freezeTableName":true
+      }
+    },
+    "test": {
+      "username": "root",
+      "password": "google",
+      "database": "tazweed",
+      "host": "localhost",
+      "dialect": "mysql",
+      "port":3306,
+      "define" : {
+        "freezeTableName":true
+      }
+    },
+    "production": {
+      "username": "root",
+      "password": "google",
+      "database": "tazweed",
+      "host": "localhost",
+      "dialect": "mysql",
+      "port":3306,
+      "define" : {
+        "freezeTableName":true
+      }
+    }
+  }
+  
