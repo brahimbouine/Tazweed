@@ -2,7 +2,6 @@ const dynamicDb = require('../config/dynamicConnection');
 
 module.exports = {
 	selectQuery(sqlQuery) {
-		// console.log(sqlQuery,companyCode);
 		return new Promise((resolve, reject) => {
 			dynamicDb.connectDbAndReturn().then(db => {
 				let sql = sqlQuery;
@@ -21,22 +20,8 @@ module.exports = {
 			})
 		})
 	},
-	selectQuery2(dbObject, sqlQuery, companyCode, ) {
-		return new Promise((resolve, reject) => {
-			let sql = sqlQuery;
-			dbObject.query(sql, (err, result) => {
-				if (err) {
-					console.log('error', err);
-					// db.end();
-					reject(err);
-				} else {
-					resolve(result);
-				}
-			})
-		})
-	},
+
 	insertQuery(sqlQuery, postData) {
-		// console.log('sqlQuery',sqlQuery,companyCode);
 		return new Promise((resolve, reject) => {
 			dynamicDb.connectDbAndReturn().then(db => {
 				let sql = sqlQuery;
@@ -57,7 +42,6 @@ module.exports = {
 		})
 	},
 	deleteQuery(sqlQuery, companyCode) {
-		// console.log(sqlQuery,companyCode);
 		return new Promise((resolve, reject) => {
 			dynamicDb.connectDbAndReturn(companyCode).then(db => {
 				let sql = sqlQuery;

@@ -4,12 +4,15 @@ const jwtConfig = require('../config/jwt.config')
 
 module.exports = {
     login: (req, res) => {
+        console.log(req.body)
         var email = req.body.email;
         var password = req.body.password;
+        // var email = req.headers.email;
+        // var password = req.headers.password;
         if (email == null || password == null) {
             return res.status(400).json({ 'error': 'error in email or password' })
         }else{
-            executeCtrl.selectQuery(`SELECT id,password FROM USERS_MAIN WHERE email='${email}'`).then(data=>{
+            executeCtrl.selectQuery(`SELECT id,password FROM USERS WHERE email='${email}'`).then(data=>{
                 if(data.length >0){
             bcrypt.compare(password, data[0].password, (errBcrypt, resBcrypt) => {
                 if (resBcrypt) {

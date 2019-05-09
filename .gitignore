@@ -1,5 +1,6 @@
 frontend/node_modules/**/*
 server/node_modules/**/*
+server/tawzeed/node_modules/**/*
 frontend/.expo/*
 frontend/npm-debug.*
 frontend/*.jks
